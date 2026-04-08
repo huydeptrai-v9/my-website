@@ -115,3 +115,24 @@ body {
   -moz-user-select: none;    /* cho Firefox */
   -ms-user-select: none;     /* cho IE/Edge cũ */
 }
+/* Video nền toàn màn hình */
+#bg-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -2; /* nằm dưới cùng */
+  object-fit: cover; /* video phủ toàn màn hình */
+}
+
+/* Lớp phủ trắng mờ */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.6); /* trắng mờ */
+  z-index: -1; /* nằm trên video nhưng dưới nội dung */
+}
