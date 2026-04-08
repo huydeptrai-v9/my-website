@@ -73,13 +73,45 @@ footer {
   padding-left: 100%;
   animation: chaychu 10s linear infinite;
 }
-.splash-regular {
+.vgh-tool {
   font-family: "Splash", cursive;
   font-weight: 400;
   font-style: normal;
 }
+.story-script-regular {
+  font-family: "Story Script", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
+.big-shoulders-stencil-regular {
+  font-family: "Big Shoulders Stencil", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
 @keyframes chaychu {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-100%); }
+}
+.snowflake {
+  position: fixed;
+  top: -10px;
+  color: white;
+  animation: snow 8s linear infinite;
+}
+
+@keyframes snow {
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(20px, 25vh); }
+  50%  { transform: translate(-20px, 50vh); }
+  75%  { transform: translate(20px, 75vh); }
+  100% { transform: translate(-20px, 100vh); }
+}
+/* Chặn chọn văn bản trên toàn bộ trang */
+body {
+  user-select: none;
+  -webkit-user-select: none; /* cho Chrome/Safari */
+  -moz-user-select: none;    /* cho Firefox */
+  -ms-user-select: none;     /* cho IE/Edge cũ */
 }

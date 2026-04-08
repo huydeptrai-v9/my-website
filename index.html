@@ -43,7 +43,55 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Splash&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Story+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&display=swap" rel="stylesheet">
 </head>
+<script>
+  // Chặn chọn văn bản
+  document.addEventListener("selectstart", function(e) {
+    e.preventDefault();
+  });
+
+  // Chặn copy bằng Ctrl+C hoặc menu chuột phải
+  document.addEventListener("copy", function(e) {
+    e.preventDefault();
+    alert("Copy không được phép trên trang này!");
+  });
+
+  // Chặn menu chuột phải
+  document.addEventListener("contextmenu", function(e) {
+    e.preventDefault();
+    alert("Chuột phải đã bị vô hiệu hóa!");
+  });
+
+  // Chặn phím tắt như Ctrl+U, Ctrl+Shift+I, Ctrl+Shift+C, Ctrl+Shift+J, F12
+  document.addEventListener("keydown", function(e) {
+    if (
+      (e.ctrlKey && e.key.toLowerCase() === "u") || // Ctrl+U
+      (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "i") || // Ctrl+Shift+I
+      (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "c") || // Ctrl+Shift+C
+      (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "j") || // Ctrl+Shift+J
+      (e.key === "F12") // F12
+    ) {
+      e.preventDefault();
+      alert("Phím tắt này đã bị vô hiệu hóa!");
+    }
+  });
+</script>
+<script>
+  document.addEventListener("click", function() {
+    let soLuongTuyet = 40; // số lượng bông tuyết
+    for (let i = 0; i < soLuongTuyet; i++) {
+      let snowflake = document.createElement("div");
+      snowflake.className = "snowflake";
+      snowflake.textContent = "❄";
+      snowflake.style.left = Math.random() * window.innerWidth + "px";
+      snowflake.style.animationDuration = (Math.random() * 5 + 5) + "s, " + (Math.random() * 3 + 2) + "s";
+      snowflake.style.fontSize = (Math.random() * 30 + 20) + "px";
+      document.body.appendChild(snowflake);
+    }
+  }, { once: true });
+</script>
 <body>
   <script>
     document.addEventListener("click", function() {
@@ -56,7 +104,7 @@
     <span>Chào mừng quý khách đến với dịch vụ của VGH-TOOL!</span>
   </div>
   <header>
-    <h1>VGH-TOOL</h1>
+    <h1 class="vgh-tool">VGH-TOOL</h1>
   </header>
 
   
@@ -66,16 +114,16 @@
   </nav>
   
   <section id="gioithieu">
-    <h2>Giới thiệu</h2>
-    <p>VGH-TOOL là một công cụ hỗ trợ người dùng trong việc đào tiền qua ứng dụng "Golike" và Buff follow, like, comment "TikTok"-"Instagram",... !</p>
+    <h2 class="big-shoulders-stencil-regular">Giới thiệu</h2>
+    <p class="story-script-regular">VGH-TOOL là một công cụ hỗ trợ người dùng trong việc đào tiền qua ứng dụng "Golike" và Buff follow, like, comment "TikTok"-"Instagram",... !</p>
   </section>
   
   <section id="lienhe">
-    <h2>Liên hệ</h2>
-    <p>Email: vuonggiahuycm@gmail.com</p>
-    <p>Số điện thoại: 0869028619</p>
-    <p>Facebook: https://www.facebook.com/huydeptrai929</p>
-    <p>GitHub: https://github.com/huydeptrai-v9</p>
+    <h2 class="big-shoulders-stencil-regular">Liên hệ</h2>
+    <p class="story-script-regular">Email: vuonggiahuycm@gmail.com</p>
+    <p class="story-script-regular">Số điện thoại: 0869028619</p>
+    <p class="story-script-regular">Facebook: https://www.facebook.com/huydeptrai929</p>
+    <p class="story-script-regular">GitHub: https://github.com/huydeptrai-v9</p>
   </section>
   
   <footer>
